@@ -1,4 +1,5 @@
 # apps/kitchenowl/values.yaml
+namespace: kitchenowl
 backend:
   replicaCount: 1
   image:
