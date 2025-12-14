@@ -22,10 +22,10 @@ spec:
   interval: 10m0s
   path: ./clusters/proxmox
   prune: true
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
   decryption:
     provider: sops
     secretRef:
       name: sops-age-key
-  sourceRef:
-    kind: GitRepository
-    name: flux-system
