@@ -1,6 +1,6 @@
 apiVersion: kusomize.config.k8s.io/v1beta1
 kind: Kustomization
-resource:
+resources:
   - kitchenowl
   - pocketid
   - tududi
