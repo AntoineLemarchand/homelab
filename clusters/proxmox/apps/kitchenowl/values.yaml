@@ -19,5 +19,5 @@ ingress:
 persistence:
   enabled: true
   size: 5Gi
-  storageClass: "standard"
+  storageClass: "local-path"
 
