@@ -10,3 +10,6 @@ spec:
   sourceRef:
     kind: GitRepository
     name: flux-system
+resources:
+  - flux-system
+  - apps

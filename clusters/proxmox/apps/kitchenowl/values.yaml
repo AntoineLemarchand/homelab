@@ -12,7 +12,7 @@ web:
 ingress:
   enabled: true
   hosts:
-    - host: kitchenowl.yourdomain.tld
+    - host: courses.antoinelemarchand.xyz
       paths:
         - path: /
           pathType: ImplementationSpecific
