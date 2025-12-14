@@ -10,7 +10,3 @@ spec:
   sourceRef:
     kind: GitRepository
     name: flux-system
-resources:
-  - apps/kitchenowl
-  - ../infrastructure/kitchenowl-chart-source.yaml
-
