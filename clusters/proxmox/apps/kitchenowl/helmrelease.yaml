@@ -9,7 +9,7 @@ spec:
   ref:
     branch: master
 ---
-apiVersion: helm.toolkit.fluxcd.io/v2beta1
+apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
   name: kitchenowl
@@ -23,7 +23,7 @@ spec:
       sourceRef:
         kind: GitRepository
         name: kitchenowl-chart
-        namespace: kitchenowl
+        namespace: flux-system
       # optional: use version if you tag releases
       # version: "0.1.0"
   valuesFrom:
