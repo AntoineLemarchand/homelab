@@ -3,6 +3,7 @@ kind: Kustomization
 namespace: kitchenowl
 resources:
   - namespace.yaml
+  - kitchenowl-secret.enc.yaml
   - helmrelease.yaml
 
 configMapGenerator:
