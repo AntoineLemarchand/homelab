@@ -1,0 +1,23 @@
+# apps/kitchenowl/values.yaml
+backend:
+  replicaCount: 1
+  image:
+    repository: tombursch/kitchenowl-backend
+    tag: "v0.7.3"
+web:
+  replicaCount: 1
+  image:
+    repository: tombursch/kitchenowl-web
+    tag: "v0.7.3"
+ingress:
+  enabled: true
+  hosts:
+    - host: kitchenowl.yourdomain.tld
+      paths:
+        - path: /
+          pathType: ImplementationSpecific
+persistence:
+  enabled: true
+  size: 5Gi
+  storageClass: "standard"
+
