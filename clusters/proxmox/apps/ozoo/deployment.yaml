@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ozoo-deployment]
+  labels:
+    app: ozoo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ozoo
+  template:
+    metadata:
+      labels:
+        app: ozoo
+    spec:
+      containers:
+      - name: ozoo
+        image: alemarchdev/ozoo-app
+      imagePullSecrets:
+      - name: regcred
