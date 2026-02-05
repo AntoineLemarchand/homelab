@@ -1,7 +1,8 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: ozoo-deployment]
+  name: ozoo-deployment
+  namespace: ozoo
   labels:
     app: ozoo
 spec:
