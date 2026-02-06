@@ -18,7 +18,52 @@ spec:
       containers:
       - name: ozoo
         image: alemarchdev/ozoo-app
+        envFrom:
+        - configMapRef:
+            name: ozoo-app-config
+        - secretRef:
+            name: ozoo-app-secrets
         ports:
         - containerPort: 3000
       imagePullSecrets:
       - name: regcred
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mongodb
+  namespace: ozoo
+  labels:
+    app: mongodb
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mongodb
+  template:
+    metadata:
+      labels:
+        app: mongodb
+    spec:
+      containers:
+      - name: mongodb
+        image: mongo:7.0
+        ports:
+        - containerPort: 27017
+        envFrom:
+        - secretRef:
+            name: ozoo-app-secrets
+        volumeMounts:
+        - name: mongodb-data
+          mountPath: /data/db
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "250m"
+          limits:
+            memory: "512Mi"
+            cpu: "500m"
+      volumes:
+      - name: mongodb-data
+        persistentVolumeClaim:
+          claimName: mongodb-pvc

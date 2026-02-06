@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: ozoo-app-config
+  namespace: ozoo
+data:
+  # === Application Settings ===
+  NODE_ENV: "production"
+  PORT: "3000"
+  HOSTNAME: "0.0.0.0"
+  # === URLs ===
+  PAYLOAD_PUBLIC_SERVER_URL: "https://yourdomain.com"
+  NEXT_PUBLIC_SERVER_URL: "https://yourdomain.com"
+  # === MongoDB ===
+  MONGO_DATABASE: "your_production_db"
+  # === Optional: CORS Settings ===
+  # PAYLOAD_CORS_ORIGIN: "https://yourdomain.com"
+  # === Optional: Rate Limiting ===
+  # RATE_LIMIT_WINDOW_MS: "900000"
+  # RATE_LIMIT_MAX_REQUESTS: "100"
+  # === Optional: Analytics ===
+  # GOOGLE_ANALYTICS_ID: "GA_MEASUREMENT_ID"
