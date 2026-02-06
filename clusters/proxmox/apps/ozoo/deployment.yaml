@@ -18,5 +18,7 @@ spec:
       containers:
       - name: ozoo
         image: alemarchdev/ozoo-app
+        ports:
+        - containerPort: 3000
       imagePullSecrets:
       - name: regcred
