@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ozoo-ingress
+  namespace: ozoo
+spec:
+  rules:
+  - host: ozoo.antoinelemarchand.xyz
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: ozoo-service
+            port:
+              number: 80
