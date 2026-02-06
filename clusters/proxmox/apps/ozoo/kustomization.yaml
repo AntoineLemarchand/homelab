@@ -3,7 +3,7 @@ kind: Kustomization
 namespace: ozoo
 resources:
   - namespace.yaml
-  - secrets.yaml
+  - secrets.enc.yaml
   - mongodb-pvc.yaml
   - mongodb-deployment.yaml
   - mongodb-service.yaml
