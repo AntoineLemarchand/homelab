@@ -4,9 +4,7 @@ namespace: ozoo
 resources:
   - namespace.yaml
   - secret.enc.yaml
-  - mongodb-pvc.yaml
-  - mongodb-deployment.yaml
-  - mongodb-service.yaml
+  - pvc.yaml
   - deployment.yaml
   - service.yaml
   - ingress.yaml
