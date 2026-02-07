@@ -6,15 +6,15 @@ metadata:
 data:
   # === Application Settings ===
   NODE_ENV: "production"
-  PORT: "80"
-  HOSTNAME: "ozoo.antoinelemarchand.xyz"
+  PORT: "3000"
+  HOSTNAME: "0.0.0.0"
   # === URLs ===
   PAYLOAD_PUBLIC_SERVER_URL: "https://ozoo.antoinelemarchand.xyz"
   NEXT_PUBLIC_SERVER_URL: "https://ozoo.antoinelemarchand.xyz"
   # === MongoDB ===
   MONGO_DATABASE: "ozoo_production"
-  # === Optional: CORS Settings ===
-  # PAYLOAD_CORS_ORIGIN: "https://yourdomain.com"
+  # === CORS Settings ===
+  PAYLOAD_CORS_ORIGIN: "https://ozoo.antoinelemarchand.xyz"
   # === Optional: Rate Limiting ===
   # RATE_LIMIT_WINDOW_MS: "900000"
   # RATE_LIMIT_MAX_REQUESTS: "100"
