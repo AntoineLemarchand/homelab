@@ -6,8 +6,8 @@ metadata:
 data:
   # === Application Settings ===
   NODE_ENV: "production"
-  PORT: "3000"
-  HOSTNAME: "0.0.0.0"
+  PORT: "80"
+  HOSTNAME: "ozoo.antoinelemarchand.xyz"
   # === URLs ===
   PAYLOAD_PUBLIC_SERVER_URL: "https://ozoo.antoinelemarchand.xyz"
   NEXT_PUBLIC_SERVER_URL: "https://ozoo.antoinelemarchand.xyz"
