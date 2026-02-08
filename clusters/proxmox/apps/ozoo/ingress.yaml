@@ -3,6 +3,8 @@ kind: Ingress
 metadata:
   name: ozoo-ingress
   namespace: ozoo
+  annotations:
+    traefik.ingress.kubernetes.io/router.entrypoints: web
 spec:
   rules:
   - host: ozoo.antoinelemarchand.xyz

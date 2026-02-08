@@ -12,4 +12,5 @@ spec:
     name: flux-system
 resources:
   - flux-system
+  - infra
   - apps
