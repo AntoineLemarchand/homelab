@@ -9,8 +9,8 @@ data:
   PORT: "3000"
   HOSTNAME: "0.0.0.0"
   # === URLs ===
-  PAYLOAD_PUBLIC_SERVER_URL: "https://ozoo.antoinelemarchand.xyz"
-  NEXT_PUBLIC_SERVER_URL: "https://ozoo.antoinelemarchand.xyz"
+  PAYLOAD_PUBLIC_SERVER_URL: "http://ozoo.antoinelemarchand.xyz"
+  NEXT_PUBLIC_SERVER_URL: "http://ozoo.antoinelemarchand.xyz"
   # === MongoDB ===
   MONGO_DATABASE: "ozoo_production"
   # === CORS Settings ===
