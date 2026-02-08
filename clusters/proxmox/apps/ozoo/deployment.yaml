@@ -25,9 +25,6 @@ spec:
             name: ozoo-app-secrets
         ports:
         - containerPort: 3000
-        volumeMounts:
-        - name: ozoo-data
-          mountPath: /data
       volumes:
       imagePullSecrets:
       - name: regcred
