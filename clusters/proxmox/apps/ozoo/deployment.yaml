@@ -29,9 +29,6 @@ spec:
         - name: ozoo-data
           mountPath: /data
       volumes:
-      - name: ozoo-data
-        persistentVolumeClaim:
-          claimName: ozoo-pvc
       imagePullSecrets:
       - name: regcred
 ---
