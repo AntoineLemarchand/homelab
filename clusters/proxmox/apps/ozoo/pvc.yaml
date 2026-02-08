@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: ozoo-pvc
+  name: mongodb-pvc
   namespace: ozoo
 spec:
   accessModes:
