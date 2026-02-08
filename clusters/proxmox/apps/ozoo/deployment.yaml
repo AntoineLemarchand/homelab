@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: ozoo
-        image: alemarchdev/ozoo-app:v1.05
+        image: alemarchdev/ozoo-app:v1.06
         envFrom:
         - configMapRef:
             name: ozoo-app-config
