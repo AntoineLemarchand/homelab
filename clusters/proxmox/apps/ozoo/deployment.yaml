@@ -63,6 +63,7 @@ spec:
         volumeMounts:
         - name: mongodb-data
           mountPath: /data/db
+          subPath: mongodb-data
         resources:
           requests:
             memory: "256Mi"
