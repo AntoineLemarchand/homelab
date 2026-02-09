@@ -29,12 +29,11 @@ spec:
         ports:
         - containerPort: 3000
       volumes:
-      imagePullSecrets:
-      - name: regcred
-      volumes:
       - name: media-uploads
         persistentVolumeClaim:
           claimName: file-pvc
+      imagePullSecrets:
+      - name: regcred
 ---
 apiVersion: apps/v1
 kind: Deployment
