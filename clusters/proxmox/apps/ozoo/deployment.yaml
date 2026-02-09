@@ -17,17 +17,24 @@ spec:
     spec:
       containers:
       - name: ozoo
-        image: alemarchdev/ozoo-app:v1.11.10
+        image: alemarchdev/ozoo-app:v1.11.11
         envFrom:
         - configMapRef:
             name: ozoo-app-config
         - secretRef:
             name: ozoo-app-secrets
+        volumeMounts:
+          - name: media-uploads
+            mountPath: /app/public/media
         ports:
         - containerPort: 3000
       volumes:
       imagePullSecrets:
       - name: regcred
+      volumes:
+      - name: media-uploads
+        persistentVolumeClaim:
+          claimName: file-pvc
 ---
 apiVersion: apps/v1
 kind: Deployment
