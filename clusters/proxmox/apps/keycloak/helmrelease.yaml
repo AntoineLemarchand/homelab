@@ -2,7 +2,7 @@ apiVersion: source.toolkit.fluxcd.io/v1
 kind: HelmRepository
 metadata:
   name: bitnami
-  namespace: flux-system
+  namespace: keycloak
 spec:
   interval: 15m
   url: oci://registry-1.docker.io/bitnamicharts/keycloak
@@ -20,7 +20,6 @@ spec:
       sourceRef:
         kind: HelmRepository
         name: bitnami
-        namespace: flux-system
   interval: 15m
   timeout: 5m
   releaseName: keycloak
