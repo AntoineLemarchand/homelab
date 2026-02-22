@@ -16,9 +16,9 @@ spec:
   chart:
     spec:
       chart: keycloak
-      version: 17.3.x
+      version: 26.3.3
       sourceRef:
-        kind: HelmRepository
+        kind: OCIRepository
         name: bitnami
   interval: 15m
   timeout: 5m
