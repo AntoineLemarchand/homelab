@@ -1,13 +1,13 @@
-apiVersion: source.toolkit.fluxcd.io/v1beta2
-kind: HelmRepository
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: OCIRepository
 metadata:
   name: keycloak-repo
   namespace: keycloak
 spec:
-  interval: 5m 
-  url: oci://registry-1.docker.io/bitnamicharts
-  type: oci
-
+  interval: 5m
+  url: oci://registry-1.docker.io/bitnamicharts/keycloak
+  ref:
+    tag: 26.3.3  # Specify the version you want
 ---
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
@@ -15,14 +15,14 @@ metadata:
   name: keycloak
   namespace: keycloak
 spec:
-  chart:
-    spec:
-      chart: keycloak
-      version: 26.3.3
-      sourceRef:
-        kind: HelmRepository
-        name: keycloak-repo
   interval: 15m
   timeout: 5m
   releaseName: keycloak
-  values:
+  chart:
+    spec:
+      chart: keycloak
+      sourceRef:
+        kind: OCIRepository
+        name: keycloak-repo
+  values: {}
+
