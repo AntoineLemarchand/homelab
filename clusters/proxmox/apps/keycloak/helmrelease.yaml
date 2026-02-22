@@ -6,6 +6,8 @@ metadata:
 spec:
   interval: 15m
   url: oci://registry-1.docker.io/bitnamicharts/keycloak
+  ref:
+    tag: 26.3.3  # Replace with your desired version
 ---
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
