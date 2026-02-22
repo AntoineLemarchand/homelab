@@ -15,7 +15,7 @@ metadata:
 spec:
   chart:
     spec:
-      chart: ./authelia
+      chart: authelia/authelia
       version: 0.10.x
       sourceRef:
         kind: HelmRepository
