@@ -1,0 +1,43 @@
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: HelmRepository
+metadata:
+  name: plane
+  namespace: plane
+spec:
+  interval: 1h0m0s
+  url: https://helm.plane.so/
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: plane-app
+  namespace: plane
+spec:
+  releaseName: plane-app
+  chart:
+    spec:
+      chart: plane-enterprise
+      sourceRef:
+        kind: HelmRepository
+        name: plane-enterprise
+        namespace: flux-system
+      version: ">=1.0.0"
+  interval: 1h
+  install:
+    remediation:
+      retries: 3
+  upgrade:
+    remediation:
+      retries: 3
+  timeout: 10m
+  wait: true
+  values:
+    license:
+      licenseDomain: "project.antoinelemarchand.xyz"
+      licenseServer: "https://prime.plane.so"
+    planeVersion: "latest"
+    ingress:
+      enabled: true
+      ingressClass: nginx
+    env:
+      storageClass: longhorn
