@@ -15,17 +15,14 @@ metadata:
   name: kitchenowl
   namespace: kitchenowl
 spec:
-  interval: 5m
   chart:
     spec:
-      # points to the chart inside the GitRepository
       chart: ./kitchenowl
       sourceRef:
         kind: GitRepository
         name: kitchenowl-chart
         namespace: kitchenowl
-      # optional: use version if you tag releases
-      # version: "0.1.0"
+  interval: 1h0m0s
   valuesFrom:
     - kind: ConfigMap
       name: kitchenowl-values
