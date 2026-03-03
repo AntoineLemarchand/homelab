@@ -20,3 +20,7 @@ spec:
         kind: HelmRepository
         name: openproject
   interval: 1h0m0s
+  values:
+    persistence:
+      enabled: true
+      accessMode: ReadWriteOnce
