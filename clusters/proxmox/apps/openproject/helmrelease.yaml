@@ -16,7 +16,7 @@ metadata:
 spec:
   chart:
     spec:
-      chart: openproject/openproject
+      chart: openproject
       sourceRef:
         kind: HelmRepository
         name: openproject
