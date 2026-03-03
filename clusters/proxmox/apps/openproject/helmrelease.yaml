@@ -19,5 +19,4 @@ spec:
       sourceRef:
         kind: HelmRepository
         name: openproject
-      version: "v17.1.2"
   interval: 1h0m0s
