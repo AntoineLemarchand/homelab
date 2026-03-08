@@ -27,7 +27,7 @@ spec:
   decryption:
     provider: sops
     secretRef:
-      name: sops-age-key
+      name: sops-gpg
   targetNamespace: development
 ---
 apiVersion: source.toolkit.fluxcd.io/v1
@@ -58,5 +58,5 @@ spec:
   decryption:
     provider: sops
     secretRef:
-      name: sops-age-key
+      name: sops-gpg
   targetNamespace: production
