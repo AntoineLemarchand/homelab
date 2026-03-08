@@ -6,5 +6,5 @@ namespace: production
 namePrefix: prod-
 commonLabels:
   environment: production
-patchesStrategicMerge:
-  - deployment-patch.yaml
+# patchesStrategicMerge:
+  # - deployment-patch.yaml
