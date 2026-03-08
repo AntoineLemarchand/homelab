@@ -19,7 +19,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 10m0s
-  path: ./clusters/proxmox/development
+  path: ./kubernetes/clusters/proxmox/development
   prune: true
   sourceRef:
     kind: GitRepository
@@ -50,7 +50,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 10m0s
-  path: ./clusters/proxmox/production
+  path: ./kubernetes/clusters/proxmox/production
   prune: true
   sourceRef:
     kind: GitRepository
