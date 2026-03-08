@@ -8,7 +8,11 @@ metadata:
 spec:
   interval: 1m0s
   ref:
+<<<<<<< HEAD
+    branch: dev
+=======
     branch: main
+>>>>>>> origin/main
   secretRef:
     name: flux-system
   url: ssh://git@github.com/AntoineLemarchand/homelab
