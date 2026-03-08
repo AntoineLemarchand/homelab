@@ -6,6 +6,5 @@ namespace: development
 namePrefix: dev-
 commonLabels:
   environment: development
-patchesStrategicMerge:
-  - deployment-patch.yaml
-
+# patchesStrategicMerge:
+  # - deployment-patch.yaml
