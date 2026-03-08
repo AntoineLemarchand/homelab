@@ -7,7 +7,7 @@ variable "cluster_name" {
 variable "talos_version" {
   description = "Version of Talos linux"
   type = string
-  default = "v1.12.4"
+  default = "v1.12.0"
 }
 
 variable "kubernetes_version" {
@@ -16,19 +16,35 @@ variable "kubernetes_version" {
   default = "1.35.2"
 }
 
-variable "nodes" {
-  description = "Name and ips of the cluster nodes"
-  type = map(string)
-  default = {
-    poutou = "192.168.1.50",
-    besancenot = "192.168.1.51"
-  }
+variable "control_planes" {
+  description = "Control plane node definitions"
+  type = map(object({
+    host_node    = string
+    vm_id        = number
+    ip           = string
+    cpu          = number
+    ram          = number
+    disk_size    = number
+    datastore_id = string
+  }))
 }
 
-variable "cluster_vip" {
+variable "workers" {
+  description = "Worker node definitions"
+  type = map(object({
+    host_node    = string
+    vm_id        = number
+    ip           = string
+    cpu          = number
+    ram          = number
+    disk_size    = number
+    datastore_id = string
+  }))
+}
+
+variable "cluster_endpoint" {
   description = "Virtual IP for the cluster endpoint"
   type = string
-  default = "192.168.1.40"
 }
 
 variable "default_gateway" {
@@ -37,7 +53,30 @@ variable "default_gateway" {
   default = "192.168.1.1"
 }
 
-# variable "netbird_setup_key" {
-# description = "The netbird setup key"
-# type = string
-# }
+variable "netbird_setup_key" {
+  description = "The netbird setup key"
+  type = string
+}
+
+variable "github_org" {
+  description = "the github Organisation or Account"
+  type = string
+  default = "AntoineLemarchand"
+}
+
+variable "github_token" {
+  description = "The github connection token"
+  type = string
+  sensitive = true
+}
+
+variable "github_repository" {
+  description = "The FluxCD repository"
+  type = string
+  default = "homelab"
+}
+
+variable "k8s_context" {
+  description = "the kubernetes context"
+  type = string
+}

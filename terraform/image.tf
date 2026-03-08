@@ -4,7 +4,7 @@ data "talos_image_factory_extensions_versions" "this" {
     names = [
       "iscsi-tools",
       "qemu-guest-agent",
-      # "netbird",
+      "netbird",
     ]
   }
 }
