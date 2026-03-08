@@ -2,7 +2,6 @@ apiVersion: source.toolkit.fluxcd.io/v1
 kind: HelmRepository
 metadata:
   name: plane
-  namespace: plane
 spec:
   interval: 1h0m0s
   url: https://helm.plane.so/
@@ -11,7 +10,6 @@ apiVersion: helm.toolkit.fluxcd.io/v2beta2
 kind: HelmRelease
 metadata:
   name: plane-app
-  namespace: plane
 spec:
   releaseName: plane-app
   chart:
