@@ -7,7 +7,7 @@ metadata:
 parameters:
   numberOfReplicas: "2"
   dataLocality: "best-effort"
-  fsType: "ext4"
+  fsType: "xfs"
   # recurringJobSelector: '[{"name": "daily-snapshot", "isGroup": false}]'
 provisioner: driver.longhorn.io
 reclaimPolicy: Retain
