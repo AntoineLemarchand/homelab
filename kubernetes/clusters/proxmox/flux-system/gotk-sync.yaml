@@ -60,4 +60,3 @@ spec:
   sourceRef:
     kind: GitRepository
     name: flux-repository
-  targetNamespace: infrastructure
