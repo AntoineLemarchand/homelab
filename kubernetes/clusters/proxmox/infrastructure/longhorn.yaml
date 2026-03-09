@@ -61,22 +61,6 @@ spec:
       tolerations: []
       nodeSelector: {}
 ---
-apiVersion: storage.k8s.io/v1
-kind: StorageClass
-metadata:
-  name: longhorn-retain
-  annotations:
-    storageclass.kubernetes.io/is-default-class: "false"
-parameters:
-  numberOfReplicas: "2"
-  dataLocality: "best-effort"
-  fsType: "ext4"
-  recurringJobSelector: '[{"name": "daily-snapshot", "isGroup": false}]'
-provisioner: driver.longhorn.io
-reclaimPolicy: Retain
-volumeBindingMode: Immediate
-allowVolumeExpansion: true
----
 apiVersion: longhorn.io/v1beta2
 kind: RecurringJob
 metadata:
@@ -104,3 +88,19 @@ spec:
   concurrency: 1
   labels:
     type: weekly
+---
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: longhorn-retain
+  annotations:
+    storageclass.kubernetes.io/is-default-class: "false"
+parameters:
+  numberOfReplicas: "2"
+  dataLocality: "best-effort"
+  fsType: "ext4"
+  recurringJobSelector: '[{"name": "daily-snapshot", "isGroup": false}]'
+provisioner: driver.longhorn.io
+reclaimPolicy: Retain
+volumeBindingMode: Immediate
+allowVolumeExpansion: true
