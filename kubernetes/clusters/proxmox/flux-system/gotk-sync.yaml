@@ -2,12 +2,12 @@
 apiVersion: source.toolkit.fluxcd.io/v1
 kind: GitRepository
 metadata:
-  name: dev-repository
+  name: flux-repository
   namespace: flux-system
 spec:
   interval: 1m0s
   ref:
-    branch: dev
+    branch: main
   secretRef:
     name: flux-system
   url: ssh://git@github.com/AntoineLemarchand/homelab.git
@@ -23,25 +23,12 @@ spec:
   prune: true
   sourceRef:
     kind: GitRepository
-    name: dev-repository
+    name: flux-repository
   decryption:
     provider: sops
     secretRef:
       name: sops-gpg
   targetNamespace: development
----
-apiVersion: source.toolkit.fluxcd.io/v1
-kind: GitRepository
-metadata:
-  name: prod-repository
-  namespace: flux-system
-spec:
-  interval: 1m0s
-  ref:
-    branch: main
-  secretRef:
-    name: flux-system
-  url: ssh://git@github.com/AntoineLemarchand/homelab.git
 ---
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
@@ -54,9 +41,23 @@ spec:
   prune: true
   sourceRef:
     kind: GitRepository
-    name: prod-repository
+    name: flux-repository
   decryption:
     provider: sops
     secretRef:
       name: sops-gpg
   targetNamespace: production
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: infra-kustomization
+  namespace: flux-system
+spec:
+  interval: 10m0s
+  path: ./kubernetes/clusters/proxmox/infrastructure
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: flux-repository
+  targetNamespace: infrastructure
