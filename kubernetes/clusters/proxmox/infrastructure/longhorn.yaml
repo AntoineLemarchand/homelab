@@ -25,7 +25,7 @@ spec:
   chart:
     spec:
       chart: longhorn
-      version: "1.6.x"
+      version: "1.11.x"
       sourceRef:
         kind: HelmRepository
         name: longhorn
@@ -85,6 +85,7 @@ metadata:
 spec:
   cron: "0 0 * * *"
   task: snapshot
+  groups: []
   retain: 7
   concurrency: 2
   labels:
@@ -98,6 +99,7 @@ metadata:
 spec:
   cron: "0 2 * * 0"
   task: backup
+  groups: []
   retain: 4
   concurrency: 1
   labels:
