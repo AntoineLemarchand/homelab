@@ -22,10 +22,8 @@ spec:
       autoSalvage: true
       createDefaultDiskLabeledNodes: false
       defaultDataPath: /var/lib/longhorn/
-      # Backup target configuration (S3 example)
-      # backupTarget: s3://longhorn-backups@us-east-1/
-      # backupTargetCredentialSecret: longhorn-s3-secret
-      # Guaranteed engine manager CPU allocation
+      backupTarget: ""
+      backupTargetCredentialSecret: ""
       guaranteedInstanceManagerCPU: 12
       nodeDrainPolicy: block-if-contains-last-replica
     persistence:
