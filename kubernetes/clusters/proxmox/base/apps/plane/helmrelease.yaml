@@ -6,7 +6,7 @@ spec:
   interval: 1h0m0s
   url: https://helm.plane.so/
 ---
-apiVersion: helm.toolkit.fluxcd.io/v2beta2
+apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
   name: plane-app
