@@ -30,7 +30,7 @@ spec:
       nodeDrainPolicy: block-if-contains-last-replica
     persistence:
       defaultClass: true
-      defaultFsType: ext4
+      defaultFsType: xfs
       defaultClassReplicaCount: 3
       reclaimPolicy: Delete
     longhornUI:
