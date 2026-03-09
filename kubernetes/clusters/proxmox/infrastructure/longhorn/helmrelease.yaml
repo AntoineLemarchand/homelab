@@ -1,0 +1,45 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: longhorn
+  namespace: longhorn-system
+spec:
+  interval: 30m
+  chart:
+    spec:
+      chart: longhorn
+      version: "1.11.x"
+      sourceRef:
+        kind: HelmRepository
+        name: longhorn
+        namespace: longhorn-system
+  timeout: 15m
+  values:
+    defaultSettings:
+      defaultReplicaCount: 2
+      storageOverProvisioningPercentage: 200
+      storageMinimalAvailablePercentage: 15
+      autoSalvage: true
+      createDefaultDiskLabeledNodes: false
+      defaultDataPath: /var/lib/longhorn/
+      # Backup target configuration (S3 example)
+      # backupTarget: s3://longhorn-backups@us-east-1/
+      # backupTargetCredentialSecret: longhorn-s3-secret
+      # Guaranteed engine manager CPU allocation
+      guaranteedInstanceManagerCPU: 12
+      nodeDrainPolicy: block-if-contains-last-replica
+    persistence:
+      defaultClass: true
+      defaultFsType: ext4
+      defaultClassReplicaCount: 3
+      reclaimPolicy: Delete
+    longhornUI:
+      replicas: 1
+    ingress:
+      enabled: false
+    longhornManager:
+      tolerations: []
+      nodeSelector: {}
+    longhornDriver:
+      tolerations: []
+      nodeSelector: {}
