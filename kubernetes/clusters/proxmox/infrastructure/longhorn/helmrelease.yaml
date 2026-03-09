@@ -22,8 +22,8 @@ spec:
       autoSalvage: true
       createDefaultDiskLabeledNodes: false
       defaultDataPath: /var/lib/longhorn/
-      backupTarget: ""
-      backupTargetCredentialSecret: ""
+      backupTarget: ~
+      backupTargetCredentialSecret: ~
       guaranteedInstanceManagerCPU: 12
       nodeDrainPolicy: block-if-contains-last-replica
     persistence:
