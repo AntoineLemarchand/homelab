@@ -4,5 +4,5 @@ resources:
   - namespace.yaml
   - helmrepository.yaml
   - helmrelease.yaml
-  - storageclass.yaml
   - recurring-jobs.yaml
+  - storageclass.yaml
