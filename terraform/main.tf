@@ -15,12 +15,9 @@ terraform {
   }
 }
 
-provider "kubernetes" {
-  config_path = "${local_file.kubeconfig.filename}"
-  config_context = var.k8s_context
-}
-
 provider "proxmox" {
   endpoint = "https://proxmox.netbird.cloud:8006/"
   insecure = true
+  username = var.proxmox_id.login
+  password = var.proxmox_id.password
 }

@@ -3,6 +3,7 @@ data "talos_image_factory_extensions_versions" "this" {
   filters = {
     names = [
       "iscsi-tools",
+      "utils-linux-tools",
       "qemu-guest-agent",
       "netbird",
     ]

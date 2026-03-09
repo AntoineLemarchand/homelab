@@ -4,6 +4,11 @@ variable "cluster_name" {
   default = "homelab"
 }
 
+variable "proxmox_id" {
+  type = object({login = string, password = string})
+  sensitive = true
+}
+
 variable "talos_version" {
   description = "Version of Talos linux"
   type = string
@@ -55,28 +60,5 @@ variable "default_gateway" {
 
 variable "netbird_setup_key" {
   description = "The netbird setup key"
-  type = string
-}
-
-variable "github_org" {
-  description = "the github Organisation or Account"
-  type = string
-  default = "AntoineLemarchand"
-}
-
-variable "github_token" {
-  description = "The github connection token"
-  type = string
-  sensitive = true
-}
-
-variable "github_repository" {
-  description = "The FluxCD repository"
-  type = string
-  default = "homelab"
-}
-
-variable "k8s_context" {
-  description = "the kubernetes context"
   type = string
 }

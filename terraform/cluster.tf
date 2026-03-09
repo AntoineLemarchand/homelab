@@ -44,7 +44,20 @@ data "talos_machine_configuration" "worker" {
   talos_version    = var.talos_version
   kubernetes_version = var.kubernetes_version
 
-  config_patches = concat(local.common_patches, [])
+  config_patches = concat(local.common_patches, [
+    yamlencode({
+      machine = {
+        kernel = {
+          modules = [
+            { name = "nbd" },
+            { name = "iscsi-tcp" },
+            { name = "iscsi-generic" },
+            { name = "configfs" },
+          ]
+        }
+      }
+    })
+  ])
 }
 
 data "talos_client_configuration" "this" {
