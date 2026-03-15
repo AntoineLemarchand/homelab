@@ -1,4 +1,4 @@
 creation_rules:
   - path_regex: .*.yaml
     encrypted_regex: ^(data|stringData)$
-    gpg: "BF57BF7A6DBE01B12D4D56ACA7A4F911668ACE71"
+    gpg: "1943731352CACC3B2164E3EED2473B882A11DCBA"
