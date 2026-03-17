@@ -19,6 +19,7 @@ spec:
       dashboard:
         enabled: true
     service:
+      enabled: true
       type: NodePort
     metrics:
       prometheus:
