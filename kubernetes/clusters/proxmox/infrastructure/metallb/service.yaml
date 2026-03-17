@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-web-app
+  namespace: apps
+  annotations:
+    # Request a specific IP (optional)
+    metallb.universe.tf/loadBalancerIPs: "192.168.1.200"
+spec:
+  type: LoadBalancer
+  ports:
+    - port: 80
+      targetPort: 8080
+  selector:
+    app: my-web-app
