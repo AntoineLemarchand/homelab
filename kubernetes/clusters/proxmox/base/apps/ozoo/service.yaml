@@ -4,7 +4,7 @@ metadata:
   name: ozoo-service
 spec:
   selector:
-    app: ozoo-service
+    app: ozoo
   type: ClusterIP
   ports:
   - protocol: TCP
