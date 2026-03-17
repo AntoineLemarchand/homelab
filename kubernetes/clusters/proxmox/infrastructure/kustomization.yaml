@@ -4,3 +4,4 @@ resources:
 - longhorn/
 - metallb/
 - ingress-traefik/
+- prometheus/
